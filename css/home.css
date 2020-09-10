@@ -1,0 +1,16 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #ccc;
+}
+body {
+  font-family: "robotoregular";
+}
+.rb {
+  font-family: "robotobold";
+}
+.header {
+  padding: 10px;
+  background: white;
+}
