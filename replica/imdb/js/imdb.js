@@ -11,24 +11,58 @@ $("#btnSearch").click((e) => {
       displayList(response);
     });
   }
+  // displayList(test_movie_list);
 });
 function displayMovieDetails(data) {
+
   console.log("--displayMovieDetails--");
   if (!data) {
     return;
   }
-  let str = ` <div class="card flex">
-  <div>
-    <img
-      src="${data.Poster}"
-    />
+  let str = ` <div class="details_card flex">
+  <div class="details_poster" style="background:url('${data.Poster}')  center center / cover no-repeat">
+   
+   
   </div>
   <div class="container">
-    <div class="title">${data.Title} (${data.Year})</div>
-    <div class="plot">
-     ${data.Plot}
+  <div class="details_header">
+  <div class="details_title">
+  <span>${data.Title}</span>
+  <span class="details_year">(${data.Year})</span></div>
+  <div class="details_sub"><span class="">${data.Rated}</span><span class="">${data.Runtime}</span><span class="">${data.Genre}</span><span class="">${data.Released}</span><span class="">${data.imdbRating}/10</span></div>
+  </div>
+
+ 
+    <div class="sec">
+    <span class="sec_type"></span>
+    <span class="sec_data">  ${data.Plot}</span>
+   
     </div>
-    <div class="rating">${data.imdbRating}/10</div>
+
+    <div class="sec">
+    <span class="sec_type">Director : </span>
+    <span class="sec_data"> ${data.Director}</span>
+   
+   </div>
+
+   <div class="sec">
+   <span class="sec_type">Writers : </span>
+   <span class="sec_data"> ${data.Writer}</span>
+  
+  </div>
+
+  <div class="sec">
+  <span class="sec_type">Actors : </span>
+  <span class="sec_data">  ${data.Actors}</span>
+
+ </div>
+
+ <div class="sec">
+ <span class="sec_type">Awards : </span>
+ <span class="sec_data">${data.Awards}</span>
+ 
+</div>
+   
   </div>
 </div>
 </div>`;
@@ -46,11 +80,9 @@ function displayList(data) {
   let str = ``;
   for (let count = 0; count < arr.length; count++) {
     str += `  <div class="card" data-imdbid=${arr[count].imdbID}>
-    <div>
-      <img
-        src="${arr[count].Poster}"
-      />
-    </div>
+    
+    <div class='imgCarousel' style="background:url('${arr[count].Poster}')  center center / cover no-repeat"></div>
+   
     <div class="container" >
       <span class="title">${arr[count].Title}</span>
       <span class="year">(${arr[count].Year})</span>
@@ -67,5 +99,6 @@ function displayList(data) {
       console.log("--movie details : ", data);
       displayMovieDetails(data);
     });
+    // displayMovieDetails(test_movie_details1);
   });
 }
