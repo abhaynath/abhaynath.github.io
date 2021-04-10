@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../fa/css/all.css" />
+    <link
+      rel="stylesheet"
+      href="../../font_style.css"
+      type="text/css"
+      media="all"
+    />
+    <script src="../../js/libs/jquery.min.js"></script>
+    <title>Postman</title>
+    <style>
+      :root {
+        --app-bg-color: #222;
+        --app-font-color: white;
+        --app-theme-color: orangered;
+        --app-theme-text-color: yellow;
+        --app-animation-speed: 1s;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: var(--app-bg-color);
+        color: var(--app-font-color);
+        font-size: 13px;
+        font-family: "OpenSans-Regular";
+      }
+      .wrap {
+        display: grid;
+        grid-template-rows: auto auto auto 1fr auto;
+        height: 100%;
+        gap: 3px;
+      }
+      .wrap div {
+        border: 1px solid rgb(114, 114, 114);
+        /* padding: 5px; */
+      }
+      .titlebar {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+      }
+      i {
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        padding: 5px;
+      }
+      .menubar {
+        display: flex;
+      }
+      .content {
+        display: grid;
+        grid-template-columns: auto 1fr;
+      }
+      .headerbar {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+      }
+      .options,
+      .menus {
+        display: flex;
+      }
+      .searchbar {
+        display: flex;
+        justify-content: center;
+      }
+      .sidebar {
+        display: grid;
+        grid-template-rows: auto 1fr;
+      }
+      .flex {
+        display: flex;
+        justify-content: space-between;
+      }
+      .vert {
+        display: grid;
+        grid-template-columns: auto 1fr;
+      }
+      .menubar .menu {
+        padding: 5px;
+      }
+      .menubar .menu:hover {
+        background-color: var(--app-theme-color);
+        color: var(--app-theme-text-color);
+        cursor: pointer;
+        transition: all var(--app-animation-speed);
+      }
+      .options .opt {
+        padding: 5px;
+      }
+      .options .opt:hover {
+        background-color: var(--app-theme-color);
+        color: var(--app-theme-text-color);
+        cursor: pointer;
+        transition: all var(--app-animation-speed);
+      }
+      .iconbox {
+        padding: 5px;
+      }
+      .iconbox i {
+        display: block;
+        text-align: center;
+      }
+      .iconbox div {
+        text-align: center;
+      }
+      .iconbox:hover {
+        background-color: var(--app-theme-color);
+        color: var(--app-theme-text-color);
+        cursor: pointer;
+        transition: all var(--app-animation-speed);
+      }
+      .folder {
+        padding-left: 20px;
+      }
+      .folder i,
+      .tablist i {
+        font-size: 16px;
+      }
+      button {
+        border: none;
+        background-color: var(--app-bg-color);
+        color: var(--app-font-color);
+      }
+      input {
+        border: 1px solid var(--app-theme-color);
+        background-color: var(--app-bg-color);
+        color: var(--app-font-color);
+        border-radius: 15px;
+      }
+      button:hover {
+        background-color: var(--app-theme-color);
+        color: var(--app-theme-text-color);
+        cursor: pointer;
+        transition: all var(--app-animation-speed);
+      }
+      .main {
+        display: grid;
+        grid-template-rows: repeat(5, auto) 1fr;
+      }
+      .tabs-list {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="titlebar">
+        <div><i class="fab fa-chrome"></i></div>
+        <div>postman</div>
+        <div>buttons</div>
+      </div>
+      <div class="menubar">
+        <div class="menu">File</div>
+        <div class="menu">Edit</div>
+        <div class="menu">View</div>
+        <div class="menu">Help</div>
+      </div>
+      <div class="headerbar">
+        <div class="options">
+          <div class="opt">Home</div>
+          <div class="opt">Workspaces</div>
+          <div class="opt">Reports</div>
+          <div class="opt">Explore</div>
+        </div>
+        <div class="searchbar">
+          <input type="search" />
+        </div>
+        <div class="menus">
+          <div class="btn"></div>
+          <div class="btn"></div>
+          <div class="btn"></div>
+          <div class="btn"></div>
+          <div class="btn"></div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="sidebar">
+          <div class="flex">
+            <div><i class="fas fa-user"></i><span>My Workspace</span></div>
+            <div><button>New</button><button>Import</button></div>
+          </div>
+          <div class="vert">
+            <div>
+              <div class="iconbox">
+                <i class="fas fa-file"></i>
+                <div>Collection</div>
+              </div>
+              <div class="iconbox">
+                <i class="fas fa-layer-group"></i>
+                <div>Monitors</div>
+              </div>
+              <div class="iconbox">
+                <i class="fas fa-coins"></i>
+                <div>APIs</div>
+              </div>
+              <div class="iconbox">
+                <i class="fas fa-server"></i>
+                <div>Server</div>
+              </div>
+              <div class="iconbox">
+                <i class="fas fa-history"></i>
+                <div>History</div>
+              </div>
+            </div>
+            <div>
+              <div class="flex">
+                <div class="flex">
+                  <div>
+                    <i class="fas fa-plus"></i
+                    ><i class="fas fa-align-center"></i>
+                  </div>
+                </div>
+                <div><i class="fas fa-ellipsis-h"></i></div>
+              </div>
+              <div class="apilist">
+                <div class="apibox">
+                  <div class="apiname">
+                    <i class="fas fa-angle-down"></i>
+                    <span>Free APIs</span>
+                  </div>
+                  <div class="apidetails">
+                    <div class="folder">
+                      <i class="fas fa-folder-open"></i>
+                      <span>getusers</span>
+                    </div>
+
+                    <div class="folder">
+                      <i class="fas fa-folder-open"></i>
+                      <span>getusers</span>
+                    </div>
+
+                    <div class="folder">
+                      <i class="fas fa-folder-open"></i>
+                      <span>getusers</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="apibox">
+                  <div class="apiname">
+                    <i class="fas fa-angle-right"></i>
+                    <span>Google maps API</span>
+                  </div>
+                  <div class="apidetails"></div>
+                </div>
+
+                <div class="apibox">
+                  <div class="apiname">
+                    <i class="fas fa-angle-right"></i>
+                    <span>NodeJs</span>
+                  </div>
+                  <div class="apidetails"></div>
+                </div>
+
+                <div class="apibox">
+                  <div class="apiname">
+                    <i class="fas fa-angle-right"></i>
+                    <span>MyService</span>
+                  </div>
+                  <div class="apidetails"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main">
+          <div class="tabs-list">
+            <div class="tablist flex">
+              <span>Home</span><i class="fas fa-times"></i>
+            </div>
+            <div class="tablist flex">
+              <span>SpaceX</span><i class="fas fa-times"></i>
+            </div>
+            <div class="tablist flex">
+              <span>GOT</span><i class="fas fa-times"></i>
+            </div>
+          </div>
+          <div class="flex">
+            <div>Github/home</div>
+            <div>
+              <button><i class="fas fa-save"></i></button>
+              <button><i class="fas fa-edit"></i></button>
+              <button><i class="fas fa-newspaper"></i></button>
+            </div>
+          </div>
+          <div>
+            <select>
+              <option value="get">GET</option>
+              <option value="post">POST</option>
+              <option value="put">PUT</option>
+              <option value="delete">DELETE</option>
+            </select>
+          </div>
+          <div>params list</div>
+          <div>params table</div>
+          <div>response</div>
+        </div>
+      </div>
+      <div class="footer"></div>
+    </div>
+  </body>
+</html>
