@@ -17,18 +17,22 @@
   </head>
   <body>
     <div class="wrap">
-      <div class="titlebar">
+      <div class="titlebar brd">
         <div><i class="fab fa-chrome"></i></div>
         <div>postman</div>
-        <div>buttons</div>
+        <div>
+          <button><i class="fas fa-window-minimize"></i></button
+          ><button><i class="fas fa-window-maximize"></i></button
+          ><button><i class="fas fa-window-close"></i></button>
+        </div>
       </div>
-      <div class="menubar">
+      <div class="menubar brd">
         <div class="menu">File</div>
         <div class="menu">Edit</div>
         <div class="menu">View</div>
         <div class="menu">Help</div>
       </div>
-      <div class="headerbar">
+      <div class="headerbar brd">
         <div class="options">
           <div class="opt">Home</div>
           <div class="opt">Workspaces</div>
@@ -47,13 +51,13 @@
         </div>
       </div>
       <div class="content">
-        <div class="sidebar">
+        <div class="sidebar brd">
           <div class="flex">
             <div><i class="fas fa-user"></i><span>My Workspace</span></div>
             <div><button>New</button><button>Import</button></div>
           </div>
           <div class="vert">
-            <div>
+            <div class="brd">
               <div class="iconbox">
                 <i class="fas fa-file"></i>
                 <div>Collection</div>
@@ -76,7 +80,7 @@
               </div>
             </div>
             <div>
-              <div class="flex">
+              <div class="flex brd">
                 <div class="flex">
                   <div>
                     <i class="fas fa-plus"></i
@@ -137,18 +141,18 @@
           </div>
         </div>
         <div class="main">
-          <div class="tabs-list">
-            <div class="tablist flex">
+          <div class="tabs-list brd">
+            <div class="tablist brd flex">
               <span>Home</span><i class="fas fa-times"></i>
             </div>
-            <div class="tablist flex">
+            <div class="tablist brd flex">
               <span>SpaceX</span><i class="fas fa-times"></i>
             </div>
-            <div class="tablist flex">
+            <div class="tablist brd flex">
               <span>GOT</span><i class="fas fa-times"></i>
             </div>
           </div>
-          <div class="flex">
+          <div class="flex brd">
             <div>Github/home</div>
             <div>
               <button><i class="fas fa-save"></i></button>
@@ -156,7 +160,7 @@
               <button><i class="fas fa-newspaper"></i></button>
             </div>
           </div>
-          <div class="apidet">
+          <div class="apidet brd">
             <select>
               <option value="get">GET</option>
               <option value="post">POST</option>
@@ -168,7 +172,7 @@
             </div>
             <button>SEND</button>
           </div>
-          <div class="flex">
+          <div class="flex brd">
             <div class="paramslist flex">
               <div>Params</div>
               <div>Authorization</div>
@@ -180,11 +184,38 @@
             </div>
             <div>Cookies</div>
           </div>
-          <div>params table</div>
-          <div>response</div>
+          <div class="brd">
+            <div>Query Params</div>
+            <div>
+              <table>
+                <tr>
+                  <th>Key</th>
+                  <th>Value</th>
+                  <th>Description</th>
+                  <th><i class="fas fa-ellipsis-h"></i></th>
+                  <th>Bulk Edit</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="brd">response</div>
         </div>
       </div>
-      <div class="footer"></div>
+      <div class="footer brd"></div>
     </div>
   </body>
 </html>

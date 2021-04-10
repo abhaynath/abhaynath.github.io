@@ -1,8 +1,9 @@
 :root {
   --app-bg-color: #222;
-  --app-font-color: white;
-  --app-theme-color: orangered;
-  --app-theme-text-color: yellow;
+  --app-font-color: rgb(0, 253, 21);
+  --app-theme-color: rgb(0, 253, 21);
+  --app-theme-text-color: rgb(0, 253, 21);
+  --app-border-color: rgb(0, 253, 21);
   --app-animation-speed: 1s;
 }
 html,
@@ -19,10 +20,9 @@ body {
   display: grid;
   grid-template-rows: auto auto auto 1fr auto;
   height: 100%;
-  gap: 3px;
 }
 .wrap div {
-  border: 1px solid rgb(114, 114, 114);
+  /* border: 1px solid var(--app-border-color); */
   /* padding: 5px; */
 }
 .titlebar {
@@ -30,7 +30,7 @@ body {
   grid-template-columns: auto 1fr auto;
 }
 i {
-  color: white;
+  color: var(--app-font-color);
   font-size: 24px;
   text-align: center;
   padding: 5px;
@@ -107,6 +107,11 @@ i {
 .tablist i {
   font-size: 16px;
 }
+.tablist {
+}
+.tablist span {
+  padding-left: 10px;
+}
 button {
   border: none;
   background-color: var(--app-bg-color);
@@ -114,7 +119,7 @@ button {
 }
 input,
 select {
-  border: 1px solid var(--app-theme-color);
+  border: 1px solid var(--app-border-color);
   background-color: var(--app-bg-color);
   color: var(--app-font-color);
   /* border-radius: 15px; */
@@ -139,4 +144,17 @@ button:hover {
 }
 .paramslist div {
   padding: 5px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table td,
+table th {
+  margin: 0;
+  border: 1px solid var(--app-border-color);
+  padding: 5px;
+}
+.brd {
+  border: 1px solid var(--app-border-color);
 }
