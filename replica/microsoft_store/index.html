@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../fa/css/all.css" />
+    <link
+      rel="stylesheet"
+      href="../../font_style.css"
+      type="text/css"
+      media="all"
+    />
+    <script src="../../js/libs/jquery.min.js"></script>
+    <title>Postman</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: #2e2e2e;
+        color: white;
+        font-size: 13px;
+        font-family: "OpenSans-Regular";
+      }
+      .noselect {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+      }
+      .wrap {
+        padding: 10px;
+      }
+      .brd {
+        /* border: 1px solid gray; */
+      }
+      .btn {
+        background-color: #0178d4;
+        padding: 5px;
+      }
+      .wrap .headerbar {
+        display: flex;
+        justify-content: space-between;
+
+        background: #2c2c2c;
+      }
+      .wrap .headerbar div {
+        padding: 5px;
+      }
+      .wrap .menuBar {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 10px;
+      }
+      .btnHeader i {
+        padding: 5px;
+      }
+      .menuBar .menu1 {
+        display: flex;
+      }
+      .menuBar .menu2 {
+        display: flex;
+      }
+      .menu1 div,
+      .menu2 div {
+        padding-right: 25px;
+      }
+      .wrap .content {
+        display: flex;
+        height: 300px;
+        /* flex-direction: column; */
+      }
+      .content .download {
+        flex-grow: 1;
+      }
+      .content .library {
+        flex-basis: 20%;
+      }
+      .library div {
+        padding: 5px;
+      }
+      .library i {
+        padding-right: 10px;
+      }
+      .download .updates {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .download .updateButton {
+        display: flex;
+        justify-content: space-between;
+      }
+      .appslist {
+        background: #1f1f1f;
+      }
+      .download .toast {
+        display: flex;
+      }
+      .appslist .app-row {
+        display: flex;
+        padding: 5px;
+        border-bottom: 1px solid #2e2e2e;
+      }
+      .appslist .app-row .app-name {
+        flex-grow: 1;
+      }
+      .appslist .app-icon {
+        font-size: 20px;
+        padding: 10px;
+      }
+      .appslist .app-version,
+      .appslist .app-date,
+      .appslist .app-name {
+        line-height: 48px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: gray;
+      }
+      .appslist .app-date {
+        flex-basis: 150px;
+        text-align: right;
+      }
+      .bigfont {
+        font-size: 60px;
+      }
+      .appslist .app-name {
+        color: white;
+        /* font-weight: bold; */
+      }
+      .bold {
+        font-weight: bold;
+        font-size: 16px;
+        padding: 5px;
+      }
+      .desc {
+        font-size: 12px;
+        padding: 5px;
+      }
+      .bg_01 {
+        background-color: #0178d4;
+      }
+      .bg_02 {
+        background-color: #272e38;
+      }
+      .bg_03 {
+        background-color: #0b35fd;
+      }
+      .bg_04 {
+        background-color: #af0000;
+      }
+      .txt_02 {
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap noselect">
+      <div class="headerbar brd">
+        <div>Microsoft Store</div>
+        <div class="btnHeader">
+          <i class="far fa-window-minimize"></i>
+          <i class="far fa-window-maximize"></i>
+          <i class="far fa-window-close"></i>
+        </div>
+      </div>
+
+      <div class="menuBar brd">
+        <div class="menu1">
+          <div><i class="fas fa-arrow-circle-left"></i></div>
+          <div>Home</div>
+          <div>Gaming</div>
+          <div>Entertainment</div>
+          <div>Productivity</div>
+        </div>
+        <div class="menu2">
+          <div><i class="fas fa-search"></i>Search</div>
+          <div><i class="fas fa-user"></i></div>
+          <div>...</div>
+        </div>
+      </div>
+
+      <div class="content brd">
+        <div class="library brd">
+          <div class="bold">My Library</div>
+          <div><i class="fas fa-home"></i>All Owned</div>
+          <div><i class="fas fa-home"></i>Installed</div>
+          <div><i class="fas fa-home"></i>Ready to install</div>
+          <div><i class="fas fa-download"></i>Downloads</div>
+          <div><i class="fas fa-home"></i>Included with device</div>
+        </div>
+        <div class="download brd">
+          <div class="updates">
+            <div class="updateButton">
+              <span>Downloads and updates</span
+              ><span class="btn">Get Updates</span>
+            </div>
+            <div class="toast">
+              <div><i class="far fa-check-circle bigfont"></i></div>
+              <div>
+                <div class="bold">You're good to go</div>
+                <div class="desc">
+                  All your trusted apps and games from Microsoft Store have the
+                  latest updates.
+                </div>
+              </div>
+            </div>
+            <div></div>
+          </div>
+          <div class="activity">
+            <div>Recent Activity</div>
+            <div class="appslist">
+              <div class="app-row">
+                <div class="app-icon bg_04">
+                  <i class="fab fa-adobe"></i>
+                </div>
+                <div class="app-name">Adobe CS6 Master Collection</div>
+                <div class="app-version">1.2</div>
+                <div class="app-date">Today,3:24 PM</div>
+              </div>
+
+              <div class="app-row">
+                <div class="app-icon bg_01">
+                  <i class="fab fa-github"></i>
+                </div>
+                <div class="app-name">GitHub</div>
+                <div class="app-version">1.2</div>
+                <div class="app-date">Yesterday</div>
+              </div>
+
+              <div class="app-row">
+                <div class="app-icon bg_02"><i class="fas fa-desktop"></i></div>
+                <div class="app-name">Google Chrome</div>
+                <div class="app-version">83.015</div>
+                <div class="app-date">Yesterday</div>
+              </div>
+
+              <div class="app-row">
+                <div class="app-icon bg_03"><i class="fas fa-desktop"></i></div>
+                <div class="app-name">Git</div>
+                <div class="app-version">2.12</div>
+                <div class="app-date">Yesterday</div>
+              </div>
+
+              <div class="app-row">
+                <div class="app-icon bg_04"><i class="fas fa-desktop"></i></div>
+                <div class="app-name">Facebook</div>
+                <div class="app-version">3.8765</div>
+                <div class="app-date">Yesterday</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

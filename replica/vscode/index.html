@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../fa/css/all.css" />
+    <link
+      rel="stylesheet"
+      href="../../font_style.css"
+      type="text/css"
+      media="all"
+    />
+    <script src="../../js/libs/jquery.min.js"></script>
+    <title>Postman</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .noselect {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+      }
+      .bg1 {
+        background-color: #333333;
+      }
+      .bg2 {
+        background-color: #252526;
+      }
+      .bg3 {
+        background-color: #1e1e1e;
+      }
+      .bg4 {
+        background-color: #252526;
+      }
+      .bg5 {
+        background-color: #2d2d2d;
+      }
+
+      .bg6 {
+        background-color: #007acc;
+      }
+      .bg7 {
+        background-color: #373737;
+      }
+      body {
+        height: 100vh;
+        color: #b1b1b1;
+        font-family: "OpenSans-Regular";
+        font-size: 13px;
+      }
+      .txtwhite {
+        color: white;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 100%;
+      }
+      .container .editor {
+        flex-grow: 1;
+      }
+
+      .container .topbar {
+        display: flex;
+        justify-content: space-between;
+      }
+      .topbar .menubar {
+        align-self: flex-start;
+        display: flex;
+      }
+      .menubar .menu {
+        padding: 5px;
+        position: relative;
+        cursor: pointer;
+      }
+      .topbar .filename {
+        align-self: center;
+      }
+      .topbar .appbuttons {
+        align-self: flex-end;
+        display: flex;
+      }
+
+      .container .editor {
+        display: flex;
+        flex-direction: row;
+      }
+      .editor .source {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .editor .sourcecode {
+        flex-grow: 1;
+      }
+      .editor .tools {
+        display: flex;
+        flex-direction: column;
+      }
+      .tools .extension {
+        flex-grow: 1;
+      }
+      .container .toolicon {
+        font-size: 24px;
+        padding: 5px;
+      }
+      .appbuttons .btn {
+        width: 10px;
+        height: 10px;
+        border: 1px solid gray;
+      }
+      .border {
+        border: 1px solid rgb(182, 181, 181);
+        border-collapse: collapse;
+      }
+      .source .filetabs {
+        display: flex;
+      }
+      .filetabs .tab {
+        padding: 5px;
+      }
+      .pad {
+        padding: 5px;
+      }
+      .menu .menu-content {
+        display: none;
+        position: absolute;
+        background-color: #333333;
+        z-index: 1;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 1, 1);
+        /* border: 1px solid gray; */
+        top: 28px;
+        left: 0px;
+      }
+      .menu:hover {
+        background-color: #505050;
+      }
+      .menu:hover .menu-content {
+        display: block;
+      }
+      .menu-content .menu-item {
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .menu-item:hover {
+        color: white;
+        background-color: #094771;
+      }
+      .menu-item .menu-hotkey {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container noselect">
+      <div class="topbar bg1">
+        <div class="menubar">
+          <div class="menu">
+            <div><i class="fab fa-js"></i></div>
+          </div>
+          <div class="menu">
+            <div class="menulbl">File</div>
+            <div class="menu-content">
+              <div class="menu-item">
+                <div class="menu-name">New File</div>
+                <div class="menu-hotkey">Ctrl+N</div>
+              </div>
+            </div>
+          </div>
+          <div class="menu">Edit</div>
+          <div class="menu">Selection</div>
+          <div class="menu">View</div>
+          <div class="menu">Go</div>
+          <div class="menu">Help</div>
+        </div>
+        <div class="filename">Filename</div>
+        <div class="appbuttons">
+          <div class="btn"></div>
+          <div class="btn"></div>
+          <div class="btn"></div>
+        </div>
+      </div>
+      <div class="editor">
+        <div class="tools bg2">
+          <div class="extension pad">
+            <div class="toolicon"><i class="fas fa-bell"></i></div>
+            <div class="toolicon"></div>
+            <div class="toolicon"></div>
+            <div class="toolicon"></div>
+            <div class="toolicon"></div>
+            <div class="toolicon"></div>
+          </div>
+
+          <div class="setting pad">
+            <div class="toolicon"></div>
+            <div class="toolicon"></div>
+          </div>
+        </div>
+        <div class="explorer bg4">
+          <div class="accord">Accordion 1</div>
+          <div class="accord">Accordion 2</div>
+          <div class="accord">Accordion 3</div>
+          <div class="accord">Accordion 4</div>
+        </div>
+        <div class="source">
+          <div class="filetabs bg4">
+            <div class="tab bg3 txtwhite">
+              <i class="fas fa-code"></i>index.html
+            </div>
+            <div class="tab bg5">style.css</div>
+            <div class="tab bg5">main.js</div>
+          </div>
+          <div class="sourcecode bg3">this is simple text message</div>
+        </div>
+        <div class="minimap bg7">Minimap</div>
+      </div>
+      <div class="pad bg6 txtwhite">Status bar</div>
+    </div>
+  </body>
+</html>
