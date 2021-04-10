@@ -1,0 +1,142 @@
+:root {
+  --app-bg-color: #222;
+  --app-font-color: white;
+  --app-theme-color: orangered;
+  --app-theme-text-color: yellow;
+  --app-animation-speed: 1s;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--app-bg-color);
+  color: var(--app-font-color);
+  font-size: 13px;
+  font-family: "OpenSans-Regular";
+}
+.wrap {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr auto;
+  height: 100%;
+  gap: 3px;
+}
+.wrap div {
+  border: 1px solid rgb(114, 114, 114);
+  /* padding: 5px; */
+}
+.titlebar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+i {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  padding: 5px;
+}
+.menubar {
+  display: flex;
+}
+.content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.headerbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+.options,
+.menus {
+  display: flex;
+}
+.searchbar {
+  display: flex;
+  justify-content: center;
+}
+.sidebar {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.vert {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.menubar .menu {
+  padding: 5px;
+}
+.menubar .menu:hover {
+  background-color: var(--app-theme-color);
+  color: var(--app-theme-text-color);
+  cursor: pointer;
+  transition: all var(--app-animation-speed);
+}
+.options .opt {
+  padding: 5px;
+}
+.options .opt:hover {
+  background-color: var(--app-theme-color);
+  color: var(--app-theme-text-color);
+  cursor: pointer;
+  transition: all var(--app-animation-speed);
+}
+.iconbox {
+  padding: 5px;
+}
+.iconbox i {
+  display: block;
+  text-align: center;
+}
+.iconbox div {
+  text-align: center;
+}
+.iconbox:hover {
+  background-color: var(--app-theme-color);
+  color: var(--app-theme-text-color);
+  cursor: pointer;
+  transition: all var(--app-animation-speed);
+}
+.folder {
+  padding-left: 20px;
+}
+.folder i,
+.tablist i {
+  font-size: 16px;
+}
+button {
+  border: none;
+  background-color: var(--app-bg-color);
+  color: var(--app-font-color);
+}
+input,
+select {
+  border: 1px solid var(--app-theme-color);
+  background-color: var(--app-bg-color);
+  color: var(--app-font-color);
+  /* border-radius: 15px; */
+}
+button:hover {
+  background-color: var(--app-theme-color);
+  color: var(--app-theme-text-color);
+  cursor: pointer;
+  transition: all var(--app-animation-speed);
+}
+.main {
+  display: grid;
+  grid-template-rows: repeat(5, auto) 1fr;
+}
+.tabs-list {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+}
+.apidet {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+.paramslist div {
+  padding: 5px;
+}

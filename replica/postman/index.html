@@ -10,144 +10,10 @@
       type="text/css"
       media="all"
     />
+    <link rel="stylesheet" href="css/postman.css" />
     <script src="../../js/libs/jquery.min.js"></script>
     <title>Postman</title>
-    <style>
-      :root {
-        --app-bg-color: #222;
-        --app-font-color: white;
-        --app-theme-color: orangered;
-        --app-theme-text-color: yellow;
-        --app-animation-speed: 1s;
-      }
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        background-color: var(--app-bg-color);
-        color: var(--app-font-color);
-        font-size: 13px;
-        font-family: "OpenSans-Regular";
-      }
-      .wrap {
-        display: grid;
-        grid-template-rows: auto auto auto 1fr auto;
-        height: 100%;
-        gap: 3px;
-      }
-      .wrap div {
-        border: 1px solid rgb(114, 114, 114);
-        /* padding: 5px; */
-      }
-      .titlebar {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-      }
-      i {
-        color: white;
-        font-size: 24px;
-        text-align: center;
-        padding: 5px;
-      }
-      .menubar {
-        display: flex;
-      }
-      .content {
-        display: grid;
-        grid-template-columns: auto 1fr;
-      }
-      .headerbar {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-      }
-      .options,
-      .menus {
-        display: flex;
-      }
-      .searchbar {
-        display: flex;
-        justify-content: center;
-      }
-      .sidebar {
-        display: grid;
-        grid-template-rows: auto 1fr;
-      }
-      .flex {
-        display: flex;
-        justify-content: space-between;
-      }
-      .vert {
-        display: grid;
-        grid-template-columns: auto 1fr;
-      }
-      .menubar .menu {
-        padding: 5px;
-      }
-      .menubar .menu:hover {
-        background-color: var(--app-theme-color);
-        color: var(--app-theme-text-color);
-        cursor: pointer;
-        transition: all var(--app-animation-speed);
-      }
-      .options .opt {
-        padding: 5px;
-      }
-      .options .opt:hover {
-        background-color: var(--app-theme-color);
-        color: var(--app-theme-text-color);
-        cursor: pointer;
-        transition: all var(--app-animation-speed);
-      }
-      .iconbox {
-        padding: 5px;
-      }
-      .iconbox i {
-        display: block;
-        text-align: center;
-      }
-      .iconbox div {
-        text-align: center;
-      }
-      .iconbox:hover {
-        background-color: var(--app-theme-color);
-        color: var(--app-theme-text-color);
-        cursor: pointer;
-        transition: all var(--app-animation-speed);
-      }
-      .folder {
-        padding-left: 20px;
-      }
-      .folder i,
-      .tablist i {
-        font-size: 16px;
-      }
-      button {
-        border: none;
-        background-color: var(--app-bg-color);
-        color: var(--app-font-color);
-      }
-      input {
-        border: 1px solid var(--app-theme-color);
-        background-color: var(--app-bg-color);
-        color: var(--app-font-color);
-        border-radius: 15px;
-      }
-      button:hover {
-        background-color: var(--app-theme-color);
-        color: var(--app-theme-text-color);
-        cursor: pointer;
-        transition: all var(--app-animation-speed);
-      }
-      .main {
-        display: grid;
-        grid-template-rows: repeat(5, auto) 1fr;
-      }
-      .tabs-list {
-        display: grid;
-        grid-template-columns: repeat(4, auto);
-      }
-    </style>
+    <style></style>
   </head>
   <body>
     <div class="wrap">
@@ -290,15 +156,30 @@
               <button><i class="fas fa-newspaper"></i></button>
             </div>
           </div>
-          <div>
+          <div class="apidet">
             <select>
               <option value="get">GET</option>
               <option value="post">POST</option>
               <option value="put">PUT</option>
               <option value="delete">DELETE</option>
             </select>
+            <div class="apiurl" contenteditable="true">
+              https://api.github.com
+            </div>
+            <button>SEND</button>
           </div>
-          <div>params list</div>
+          <div class="flex">
+            <div class="paramslist flex">
+              <div>Params</div>
+              <div>Authorization</div>
+              <div>Headers(7)</div>
+              <div>Body</div>
+              <div>Pre-request-script</div>
+              <div>Tests</div>
+              <div>Settings</div>
+            </div>
+            <div>Cookies</div>
+          </div>
           <div>params table</div>
           <div>response</div>
         </div>
