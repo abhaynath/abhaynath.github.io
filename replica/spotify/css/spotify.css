@@ -1,0 +1,18 @@
+:root {
+  --app-bg-color: #222;
+  --app-font-color: rgb(0, 253, 21);
+  --app-theme-color: rgb(0, 253, 21);
+  --app-theme-text-color: rgb(0, 253, 21);
+  --app-border-color: rgb(0, 253, 21);
+  --app-animation-speed: 1s;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--app-bg-color);
+  color: var(--app-font-color);
+  font-size: 13px;
+  font-family: "OpenSans-Regular";
+}
