@@ -39,11 +39,11 @@ button {
   border: 1px solid var(--app-border-color);
 }
 .list {
-  display: grid;
-  grid-template-rows: auto repeat(3, 1fr);
+  /* display: grid;
+  grid-template-rows: auto; */
 }
 .playlist {
-  display: grid;
+  /* display: grid; */
 }
 .playlist > div {
   padding: 5px;
@@ -56,4 +56,19 @@ button {
 .playlist i {
   font-size: 20px;
   padding-right: 10px;
+}
+.content {
+  display: grid;
+  grid-template-rows: auto 300px 1fr 100px;
+}
+.capsule {
+  border-radius: 5px;
+  padding: 3px;
+}
+.fb {
+  font-size: 24px;
+}
+.poster {
+  display: grid;
+  grid-template-columns: 150px 1fr;
 }
