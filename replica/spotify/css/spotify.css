@@ -16,3 +16,44 @@ body {
   font-size: 13px;
   font-family: "OpenSans-Regular";
 }
+
+.wrap {
+  display: grid;
+  height: 100%;
+  grid-template-rows: auto 1fr auto;
+}
+.wrap div {
+  border: 1px solid var(--app-border-color);
+}
+.main {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+button {
+  background-color: var(--app-bg-color);
+  color: var(--app-font-color);
+  border: 1px solid var(--app-border-color);
+}
+.list {
+  display: grid;
+  grid-template-rows: auto repeat(3, 1fr);
+}
+.playlist {
+  display: grid;
+}
+.playlist > div {
+  padding: 5px;
+}
+.playlist div {
+  /* padding: 5px; */
+
+  text-align: left;
+}
+.playlist i {
+  font-size: 20px;
+  padding-right: 10px;
+}
