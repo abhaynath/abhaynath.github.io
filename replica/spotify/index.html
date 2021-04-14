@@ -10,13 +10,23 @@
       type="text/css"
       media="all"
     />
-    <link rel="stylesheet" href="css/spotify.css" />
+    <link rel="stylesheet" href="css/dataimg.css" />
+    <link
+      rel="stylesheet"
+      media="screen and (min-width: 768px)"
+      href="css/spotify_desktop.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (min-width: 320px) and (max-width: 767px)"
+      href="css/spotify_mobile.css"
+    />
     <script src="../../js/libs/jquery.min.js"></script>
     <title>Spotify</title>
   </head>
   <body>
     <div class="wrap">
-      <div class="flex p10">
+      <div class="titlebar flex p10">
         <div class=""><i class="fab fa-spotify fb clr"></i></div>
         <div>
           <button><i class="fas fa-window-minimize"></i></button
@@ -27,7 +37,7 @@
       <div class="main">
         <div class="list">
           <div class="p10"><i class="fas fa-ellipsis-h"></i></div>
-          <div class="playlist brd-btm p10">
+          <div class="fixedmenu playlist brd-btm p10">
             <div class="flex">
               <i class="fas fa-home"></i>
               <div>Home</div>

@@ -1,0 +1,37 @@
+:root {
+  --app-bg-color: #212121;
+  --app-bg-content: #121212;
+  --app-bg-song-details: #181818;
+  --app-font-color: #aeb0b1;
+  --app-theme-color: white;
+  --app-theme-text-color: rgb(0, 253, 21);
+  --app-icon-color: #1cb859;
+  --app-border-color: #232323;
+  --app-animation-speed: 1s;
+  --app-bg-sidebar: black;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: var(--app-bg-color);
+  color: var(--app-font-color);
+  font-size: 13px;
+  font-family: "OpenSans-Regular";
+  overflow: auto;
+}
+.titlebar {
+  display: none;
+}
+.fixedmenu {
+  position: fixed;
+  background-color: var(--app-bg-color);
+  bottom: 0;
+
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 10px;
+}
