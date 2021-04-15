@@ -24,6 +24,9 @@ body {
 .titlebar {
   display: none;
 }
+.fixedmenu .flex {
+  text-align: center;
+}
 .fixedmenu {
   position: fixed;
   background-color: var(--app-bg-color);
