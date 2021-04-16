@@ -10,13 +10,18 @@
       type="text/css"
       media="all"
     />
+    <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/dataimg.css" />
-    <link rel="stylesheet" href="css/desktop.css" />
-    <!-- <link
+    <link
+      rel="stylesheet"
+      media="screen and (min-width: 768px)"
+      href="css/desktop.css"
+    />
+    <link
       rel="stylesheet"
       media="screen and (min-width: 320px) and (max-width: 767px)"
       href="css/mobile.css"
-    /> -->
+    />
     <script src="../../js/libs/jquery.min.js"></script>
     <title>Windows 10</title>
   </head>
@@ -25,7 +30,10 @@
       <div id="conWallpaper" class="bgwall">
         <div id="iconGrid"></div>
       </div>
-      <div id="taskbar">Taskbar</div>
+      <div id="taskbar">
+        <i class="fab fa-windows"></i>
+        <i class="fas fa-search"></i>
+      </div>
     </div>
   </body>
   <script type="module" src="js/main.js"></script>

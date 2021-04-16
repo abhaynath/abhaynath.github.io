@@ -1,15 +1,3 @@
-:root {
-  --app-bg-color: #212121;
-  --app-bg-content: #121212;
-  --app-bg-song-details: #181818;
-  --app-font-color: #aeb0b1;
-  --app-theme-color: white;
-  --app-theme-text-color: rgb(0, 253, 21);
-  --app-icon-color: #1cb859;
-  --app-border-color: #232323;
-  --app-animation-speed: 1s;
-  --app-bg-sidebar: black;
-}
 html,
 body {
   margin: 0;
@@ -24,44 +12,10 @@ body {
   width: 100%;
   height: 100%;
 }
-#conWallpaper {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  padding: 10px;
-}
-#taskbar {
-  position: fixed;
-  bottom: 0;
-}
+
 #iconGrid {
   display: grid;
   width: 160px;
 
   grid-template-columns: auto auto;
-}
-#iconGrid .icon {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: 5px;
-}
-#iconGrid .icon:hover {
-  color: white;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-#iconGrid .title {
-  text-shadow: 2px 2px #000000;
-  margin: 5px;
-  font-size: 10px;
-}
-#iconGrid i {
-  font-size: 30px;
-  text-align: center;
-}
-.flt {
-  filter: drop-shadow(2px 2px 1px black);
 }
