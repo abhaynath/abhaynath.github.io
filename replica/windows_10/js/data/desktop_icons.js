@@ -19,4 +19,24 @@ export const arrDesktopIcons = [
     name: "Evernote",
     icon: "fab fa-evernote",
   },
+  {
+    name: "Github",
+    icon: "fab fa-github",
+  },
+  {
+    name: "Internet Explorer",
+    icon: "fab fa-internet-explorer",
+  },
+  {
+    name: "Spotify",
+    icon: "fab fa-spotify",
+  },
+  {
+    name: "Skype",
+    icon: "fab fa-skype",
+  },
+  {
+    name: "Erlang",
+    icon: "fab fa-erlang",
+  },
 ];
