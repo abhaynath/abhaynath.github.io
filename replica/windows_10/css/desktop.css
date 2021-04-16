@@ -34,3 +34,32 @@ body {
   position: fixed;
   bottom: 0;
 }
+#iconGrid {
+  display: grid;
+  width: 200px;
+  padding: 10px;
+  grid-template-columns: auto auto;
+}
+#iconGrid .icon {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 5px;
+}
+#iconGrid .icon:hover {
+  color: white;
+  cursor: pointer;
+  background-color: red;
+}
+#iconGrid .title {
+  text-shadow: 2px 2px #000000;
+  margin: 5px;
+  font-size: 10px;
+}
+#iconGrid i {
+  font-size: 30px;
+  text-align: center;
+}
+.flt {
+  filter: drop-shadow(2px 2px 1px black);
+}
