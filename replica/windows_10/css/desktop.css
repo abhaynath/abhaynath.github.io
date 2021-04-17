@@ -19,3 +19,53 @@ body {
 
   grid-template-columns: auto auto;
 }
+#startMenu {
+  display: grid;
+  position: fixed;
+  padding: 5px;
+  background-color: var(--app-bg-content);
+  grid-template-columns: repeat(3, auto);
+  bottom: 30px;
+  box-shadow: rgb(0 0 0 / 53%) 5px -4px 10px;
+  /* width: 50%; */
+  /* height: 400px; */
+}
+#startMenuDefault {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#starLeftIcons {
+  display: flex;
+  flex-direction: column;
+}
+
+#divAllAppsList {
+  display: flex;
+  flex-direction: column;
+}
+#divAllAppsList .group {
+  /* margin-top: 5px;
+  margin-bottom: 5px; */
+  padding: 10px;
+}
+#divAllAppsList .app,
+#divAllAppsList .folder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  cursor: pointer;
+  padding: 5px;
+}
+#divAllAppsList .apptitle {
+  flex-grow: 1;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#divAllAppsList .groupTitle {
+  padding-left: 10px;
+}
+#divAllAppsList .groupTitle {
+  /* padding-top: 5px;
+  padding-bottom: 5px; */
+}

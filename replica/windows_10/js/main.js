@@ -24,7 +24,7 @@ var UIManager = (function () {
   <i class="${arrTaskbarIcons[count].icon}" title=" ${arrTaskbarIcons[count].name}"> </i>
   `;
     }
-    $("#taskbar").html(str);
+    $("#taskbar_icons").html(str);
   }
 
   instance.createDesktopIcons = createDesktopIcons;
