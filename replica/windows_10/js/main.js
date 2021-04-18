@@ -21,16 +21,53 @@ var UIManager = (function () {
     let str = ``;
     for (let count = 0; count < arrTaskbarIcons.length; count++) {
       str += `
-  <i class="${arrTaskbarIcons[count].icon}" title=" ${arrTaskbarIcons[count].name}"> </i>
+  <i  id="${arrTaskbarIcons[count].id}"class="${arrTaskbarIcons[count].icon}" title="${arrTaskbarIcons[count].name}"> </i>
   `;
     }
     $("#taskbar_icons").html(str);
+
+    $("#tsk_windows").click(() => {
+      $("#startMenu").toggle();
+    });
+  }
+
+  function createAllAppsIcon() {
+    let list = ObjStartMenuIcons.all_apps.list;
+
+    let str = ``;
+    for (let count = 0; count < list.length; count++) {
+      let obj = list[count];
+
+      let apps = obj.apps;
+
+      let strApp = ``;
+      for (let j = 0; j < apps.length; j++) {
+        strApp += ` <div class="${apps[j].type}">
+        <i class="${apps[j].icon}"></i>
+        <div class="apptitle">${apps[j].name}</div>
+        <i class="fas fa-arrow-down"></i>
+      </div>`;
+      }
+
+      str += `
+      <div class="group">
+      <div class="groupTitle">${obj.title}</div>
+      <div class="groupApps">${strApp}
+      
+      </div>
+    </div>
+  `;
+    }
+    $("#divAllAppsList").html(str);
+    $("#startMenu").hide();
   }
 
   instance.createDesktopIcons = createDesktopIcons;
   instance.createTaskbar = createTaskbar;
+  instance.createAllAppsIcon = createAllAppsIcon;
   return instance;
 })();
 
 UIManager.createDesktopIcons();
 UIManager.createTaskbar();
+UIManager.createAllAppsIcon();

@@ -10,7 +10,24 @@
   --app-animation-speed: 1s;
   --app-bg-sidebar: black;
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--app-bg-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 #conWallpaper {
   box-sizing: border-box;
   width: 100%;
@@ -62,4 +79,7 @@
 }
 #startMenu i {
   font-size: 20px;
+}
+.hide {
+  display: none;
 }

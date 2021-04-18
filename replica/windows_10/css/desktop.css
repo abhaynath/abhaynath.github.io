@@ -24,16 +24,18 @@ body {
   position: fixed;
   padding: 5px;
   background-color: var(--app-bg-content);
+  /* background-color: blue; */
   grid-template-columns: repeat(3, auto);
-  bottom: 30px;
+  bottom: 31px;
   box-shadow: rgb(0 0 0 / 53%) 5px -4px 10px;
   /* width: 50%; */
-  /* height: 400px; */
+  /* max-height: 70%; */
 }
 #startMenuDefault {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* background-color: red; */
 }
 #starLeftIcons {
   display: flex;
@@ -43,6 +45,10 @@ body {
 #divAllAppsList {
   display: flex;
   flex-direction: column;
+  /* background-color: green; */
+  /* max-height: 300px; */
+  max-height: 400px;
+  overflow: auto;
 }
 #divAllAppsList .group {
   /* margin-top: 5px;
