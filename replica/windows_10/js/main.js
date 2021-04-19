@@ -26,7 +26,8 @@ var UIManager = (function () {
     }
     $("#taskbar_icons").html(str);
 
-    $("#tsk_windows").click(() => {
+    $("#tsk_windows").click((e) => {
+      e.stopPropagation();
       $("#startMenu").toggle();
     });
   }
@@ -42,10 +43,14 @@ var UIManager = (function () {
 
       let strApp = ``;
       for (let j = 0; j < apps.length; j++) {
+        let folderIcon = "";
+        if (apps[j].type == "folder") {
+          folderIcon = ` <i class="fas fa-angle-down"></i>`;
+        }
         strApp += ` <div class="${apps[j].type}">
         <i class="${apps[j].icon}"></i>
         <div class="apptitle">${apps[j].name}</div>
-        <i class="fas fa-arrow-down"></i>
+       ${folderIcon}
       </div>`;
       }
 
@@ -62,12 +67,20 @@ var UIManager = (function () {
     $("#startMenu").hide();
   }
 
+  function initEventHandlers() {
+    $("#conWallpaper").click((e) => {
+      e.stopPropagation();
+      $("#startMenu").hide();
+    });
+  }
   instance.createDesktopIcons = createDesktopIcons;
   instance.createTaskbar = createTaskbar;
   instance.createAllAppsIcon = createAllAppsIcon;
+  instance.initEventHandlers = initEventHandlers;
   return instance;
 })();
 
 UIManager.createDesktopIcons();
 UIManager.createTaskbar();
 UIManager.createAllAppsIcon();
+UIManager.initEventHandlers();

@@ -11,7 +11,7 @@
   --app-bg-sidebar: black;
 }
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 3px;
 }
 
 /* Track */
