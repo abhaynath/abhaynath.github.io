@@ -21,3 +21,20 @@ body {
   background-color: var(--app-bg-color);
   color: var(--app-font-color);
 }
+/* unvisited link */
+
+/* visited link */
+a:link,
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}

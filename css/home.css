@@ -52,3 +52,9 @@ a:visited {
   font-size: 24px;
   padding-right: 5px;
 }
+.heading {
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px #000000;
+}
