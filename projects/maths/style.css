@@ -1,0 +1,23 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  font-family: "OpenSans-Regular";
+}
+:root {
+  --app-bg-color: #212121;
+  --app-bg-content: #121212;
+  --app-bg-song-details: #181818;
+  --app-font-color: #aeb0b1;
+  --app-theme-color: white;
+  --app-theme-text-color: rgb(0, 253, 21);
+  --app-icon-color: #1cb859;
+  --app-border-color: #232323;
+  --app-animation-speed: 1s;
+  --app-bg-sidebar: black;
+}
+body {
+  background-color: var(--app-bg-color);
+  color: var(--app-font-color);
+}
