@@ -1,0 +1,16 @@
+body {
+  font-family: "robotoregular";
+}
+table {
+  width: 300px;
+  overflow: auto;
+
+  border-collapse: collapse;
+}
+table td {
+  border: 1px solid gray;
+  text-align: center;
+}
+table tr:nth-child(even) {
+  background-color: #f2f2f223;
+}
