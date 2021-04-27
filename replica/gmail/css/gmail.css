@@ -1,34 +1,85 @@
-.grid-container {
-  margin: 10px;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "OpenSans-Regular";
+  font-size: 13px;
+}
+:root {
+  --app-bg-color: white;
+}
+
+.wrap {
+  background-color: var(--app-bg-color);
   display: grid;
-  justify-content: space-evenly;
-  grid-template-columns: 50px 50px 50px; /*Make the grid smaller than the container*/
-  grid-gap: 10px;
-  background-color: #2196f3;
-  padding: 10px;
+  /* grid-template-columns: 200px 1fr 100px; */
+  grid-template-rows: auto 1fr;
+  height: 100%;
 }
-
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
+.wrap div {
+  padding: 5px;
+  border: 1px solid gray;
 }
-
-.grid-container1 {
-  margin: 10px;
+.wrap .content {
   display: grid;
-  height: 400px;
-  align-content: center;
-  grid-template-columns: auto auto auto;
-  grid-gap: 10px;
-  background-color: #2f21f3;
-  padding: 10px;
+  grid-template-columns: auto 1fr auto;
 }
-
-.grid-container1 > div {
-  background-color: rgba(255, 255, 255, 0.8);
+.wrap .divmail {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+}
+.wrap .listemail .row {
+  display: grid;
+  grid-template-columns: 100px 150px 1fr auto;
+}
+.wrap .tablist {
+  display: flex;
+}
+.wrap .tablist .tab {
+  display: flex;
+}
+.wrap .tabtitle .tag {
+  background-color: blue;
+  color: white;
+  padding: 3px;
+  font-size: 10px;
+  border-radius: 7px;
+}
+.wrap .header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+.wrap .header input {
+  width: 100%;
+  padding: 5px;
+}
+.wrap .leftbar {
+  display: grid;
+  grid-template-rows: auto 1fr 1fr auto;
+}
+.wrap .rightbar {
+  display: flex;
+  flex-direction: column;
+}
+.wrap i {
+  font-size: 16px;
   text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
+  padding: 5px;
+  color: orangered;
+}
+.wrap i:hover {
+  color: brown;
+  cursor: pointer;
+}
+.wrap .mail_category {
+}
+.wrap .mail_category .category {
+  display: grid;
+  grid-template-columns: 25px 1fr auto;
+}
+.wrap .left-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* place-content: center; */
 }
