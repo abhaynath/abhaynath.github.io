@@ -11,17 +11,39 @@ body {
   height: 100vh;
   font-family: "OpenSans-Regular";
   font-size: 13px;
+  /* overflow: hidden; */
+  background-color: gray;
 }
 :root {
   --app-bg-color: white;
+  --app-header-bg: white;
+}
+::-webkit-scrollbar {
+  width: 3px;
 }
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--app-bg-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 .wrap {
   background-color: var(--app-bg-color);
   display: grid;
+  height: 100%;
   /* grid-template-columns: 200px 1fr 100px; */
   grid-template-rows: auto 1fr;
-  height: 100%;
+
+  /* overflow: hidden; */
 }
 .wrap div {
   padding: 5px;
@@ -30,10 +52,12 @@ body {
 .wrap .content {
   display: grid;
   grid-template-columns: auto 1fr auto;
+  overflow-y: auto;
 }
 .wrap .divmail {
   display: grid;
   grid-template-rows: auto auto 1fr;
+  overflow-y: auto;
 }
 .wrap .listemail .row {
   display: grid;
@@ -106,4 +130,21 @@ body {
 }
 .btn i {
   font-size: 2em;
+}
+.category .count {
+  background-color: green;
+  color: white;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  font-size: 8px;
+  line-height: 10px;
+}
+.row .title {
+  font-weight: bold;
+}
+#divListMail {
+  overflow-y: auto;
 }
