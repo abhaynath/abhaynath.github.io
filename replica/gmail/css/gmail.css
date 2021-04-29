@@ -86,7 +86,9 @@ body {
 }
 .wrap .leftbar {
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: auto 1fr 1fr auto;
+  overflow-y: auto;
+  gap: 5px;
 }
 .wrap .rightbar {
   display: flex;
@@ -102,9 +104,7 @@ body {
   color: brown;
   cursor: pointer;
 }
-.wrap .mail_category {
-  overflow: auto;
-}
+
 .wrap .mail_category .category,
 .wrap .contact_list .category {
   display: grid;
@@ -146,5 +146,11 @@ body {
   font-weight: bold;
 }
 #divListMail {
+  overflow-y: auto;
+}
+#contactList {
+  overflow-y: auto;
+}
+#mailCategory {
   overflow-y: auto;
 }
