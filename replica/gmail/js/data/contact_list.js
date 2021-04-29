@@ -44,4 +44,49 @@ export const arrContactList = [
     name: "Shikhar Dhawan",
     class: "fas fa-user",
   },
+  {
+    id: "con_10",
+    name: "Virat Kohli",
+    class: "fas fa-user",
+  },
+  {
+    id: "con_11",
+    name: "Rohit Sharma",
+    class: "fas fa-box",
+  },
+  {
+    id: "con_12",
+    name: "Shikhar Dhawan",
+    class: "fas fa-user",
+  },
+  {
+    id: "con_13",
+    name: "Virat Kohli",
+    class: "fas fa-user",
+  },
+  {
+    id: "con_14",
+    name: "Rohit Sharma",
+    class: "fas fa-box",
+  },
+  {
+    id: "con_15",
+    name: "Shikhar Dhawan",
+    class: "fas fa-user",
+  },
+  {
+    id: "con_16",
+    name: "Virat Kohli",
+    class: "fas fa-user",
+  },
+  {
+    id: "con_17",
+    name: "Rohit Sharma",
+    class: "fas fa-box",
+  },
+  {
+    id: "con_18",
+    name: "Shikhar Dhawan",
+    class: "fas fa-user",
+  },
 ];

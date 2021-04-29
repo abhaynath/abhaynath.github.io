@@ -21,7 +21,7 @@ const createTabList = () => {
 const createEmailList = () => {
   let str = ``;
   for (let count = 0; count < 100; count++) {
-    str += `<div class="row">
+    str += `<div class="row bb">
         <div class="icons">
           <i class="fa fa-check-square"></i>
           <i class="fa fa-check-circle"></i>
@@ -87,6 +87,12 @@ const createToolbar = () => {
   });
   document.getElementById("divToolbar").innerHTML = str;
 };
+
+const setEventHandlers = () => {
+  document.getElementById("menuLogo").onclick = function (e) {
+    document.getElementById("leftBar").classList.toggle("hide");
+  };
+};
 createContactList();
 createMailCategories();
 createEmailList();
@@ -94,3 +100,4 @@ createTabList();
 createLeftFooter();
 createRightSidebar();
 createToolbar();
+setEventHandlers();

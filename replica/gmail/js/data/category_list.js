@@ -44,4 +44,49 @@ export const arrCategoryList = [
     name: "Draft",
     class: "fas fa-user",
   },
+  {
+    id: "cat_10",
+    name: "Inbox",
+    class: "fas fa-user",
+  },
+  {
+    id: "cat_11",
+    name: "Sent",
+    class: "fas fa-box",
+  },
+  {
+    id: "cat_12",
+    name: "Draft",
+    class: "fas fa-user",
+  },
+  {
+    id: "cat_13",
+    name: "Inbox",
+    class: "fas fa-user",
+  },
+  {
+    id: "cat_14",
+    name: "Sent",
+    class: "fas fa-box",
+  },
+  {
+    id: "cat_15",
+    name: "Draft",
+    class: "fas fa-user",
+  },
+  {
+    id: "cat_16",
+    name: "Inbox",
+    class: "fas fa-user",
+  },
+  {
+    id: "cat_17",
+    name: "Sent",
+    class: "fas fa-box",
+  },
+  {
+    id: "cat_18",
+    name: "Draft",
+    class: "fas fa-user",
+  },
 ];

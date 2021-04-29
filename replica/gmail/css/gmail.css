@@ -17,9 +17,17 @@ body {
 :root {
   --app-bg-color: white;
   --app-header-bg: white;
+  --app-border-bottom: #ccc;
 }
 ::-webkit-scrollbar {
   width: 3px;
+}
+.bb {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--app-border-bottom);
+}
+.hide {
+  display: none !important;
 }
 
 /* Track */
@@ -46,8 +54,8 @@ body {
   /* overflow: hidden; */
 }
 .wrap div {
-  padding: 5px;
-  border: 1px solid gray;
+  /* padding: 5px; */
+  /* border: 1px solid gray; */
 }
 .wrap .content {
   display: grid;
@@ -68,6 +76,11 @@ body {
 }
 .wrap .tablist .tab {
   display: flex;
+  font-weight: bold;
+  line-height: 26px;
+  padding: 0.5rem;
+  border: 1px solid var(--app-border-bottom);
+  flex-grow: 1;
 }
 .wrap .tabtitle .tag {
   background-color: blue;
@@ -75,6 +88,7 @@ body {
   padding: 3px;
   font-size: 10px;
   border-radius: 7px;
+  margin-left: 1rem;
 }
 .wrap .header {
   display: grid;
@@ -109,12 +123,17 @@ body {
 .wrap .contact_list .category {
   display: grid;
   grid-template-columns: 25px 1fr auto;
+  cursor: pointer;
+}
+.category:hover {
+  background-color: rgb(255, 205, 111);
+  color: crimson;
 }
 .category:nth-child(2n) {
-  background-color: coral;
+  /* background-color: white; */
 }
 .category:nth-child(2n + 1) {
-  background-color: cornflowerblue;
+  /* background-color: rgb(223, 223, 223); */
 }
 .wrap .left-footer {
   display: grid;
@@ -125,8 +144,8 @@ body {
   border-bottom: 1px solid gray;
 }
 .btn {
-  border: 1px solid orangered;
-  border-radius: 10px;
+  /* border: 1px solid orangered;
+  border-radius: 10px; */
 }
 .btn i {
   font-size: 2em;
@@ -134,13 +153,14 @@ body {
 .category .count {
   background-color: green;
   color: white;
-  width: 10px;
-  height: 10px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   font-weight: bold;
   text-align: center;
   font-size: 8px;
-  line-height: 10px;
+  line-height: 16px;
+  margin: 5px;
 }
 .row .title {
   font-weight: bold;
@@ -153,4 +173,11 @@ body {
 }
 #mailCategory {
   overflow-y: auto;
+}
+.category .title {
+  font-weight: bold;
+  line-height: 26px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
