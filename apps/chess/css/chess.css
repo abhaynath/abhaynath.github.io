@@ -1,0 +1,44 @@
+html,
+body {
+  font-family: "robotoregular";
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+#chessboard {
+  /* width: 100%; */
+  padding: 10px;
+  width: 500px;
+  height: 500px;
+  display: grid;
+
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+#chessboard .slot {
+  /* border: 1px solid gray; */
+  text-align: center;
+}
+.slot:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.black {
+  color: white;
+  background-color: #672602;
+  opacity: 0.9;
+  background: linear-gradient(135deg, #1c0a0055 25%, transparent 25%) -11px 0/
+      22px 22px,
+    linear-gradient(225deg, #1c0a00 25%, transparent 25%) -11px 0/ 22px 22px,
+    linear-gradient(315deg, #1c0a0055 25%, transparent 25%) 0px 0/ 22px 22px,
+    linear-gradient(45deg, #1c0a00 25%, #672602 25%) 0px 0/ 22px 22px;
+}
+.white {
+  background-color: #ffe3d3;
+  opacity: 0.9;
+  background: linear-gradient(135deg, #e0b29955 25%, transparent 25%) -11px 0/
+      22px 22px,
+    linear-gradient(225deg, #e0b299 25%, transparent 25%) -11px 0/ 22px 22px,
+    linear-gradient(315deg, #e0b29955 25%, transparent 25%) 0px 0/ 22px 22px,
+    linear-gradient(45deg, #e0b299 25%, #ffe3d3 25%) 0px 0/ 22px 22px;
+}
