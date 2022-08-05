@@ -10,6 +10,7 @@
       body {
         margin: 0;
         padding: 0;
+        background-color: black;
       }
       body {
         /*    display: flex;
@@ -22,12 +23,17 @@
         /* background-color: orange; */
         /* border: 1px solid gray; */
       }
+      .controls{
+        background-color: rgb(32, 31, 31);
+        color:white;
+      }
       .controls .row {
         display: flex;
         /* justify-content: space-between; */
       }
       .controls input {
         width: 50px;
+        margin-left:5px;
       }
     </style>
   </head>
@@ -47,7 +53,7 @@
       </div>
       <div class="row">
         <label for="color">Color</label>
-        <input type="color" id="color" value="#3c006a" />
+        <input type="color" id="color" value="#80FF00" />
       </div>
      <!--  <div class="row">
         <button id="btnDraw">Draw</button>
