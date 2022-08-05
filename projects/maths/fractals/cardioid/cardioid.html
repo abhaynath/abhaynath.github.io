@@ -10,7 +10,6 @@
       body {
         margin: 0;
         padding: 0;
-        
       }
       body {
         background-color: black;
@@ -24,9 +23,9 @@
         /* background-color: orange; */
         /* border: 1px solid gray; */
       }
-      .controls{
+      .controls {
         background-color: rgb(32, 31, 31);
-        color:white;
+        color: white;
       }
       .controls .row {
         display: flex;
@@ -34,7 +33,7 @@
       }
       .controls input {
         width: 50px;
-        margin-left:5px;
+        margin-left: 5px;
       }
     </style>
   </head>
@@ -56,7 +55,7 @@
         <label for="color">Color</label>
         <input type="color" id="color" value="#80FF00" />
       </div>
-     <!--  <div class="row">
+      <!--  <div class="row">
         <button id="btnDraw">Draw</button>
       </div> -->
     </div>
@@ -85,11 +84,11 @@
       let width = obj.actualWidth;
       let height = obj.actualHeight;
       min = Math.min(width, height);
-      min -= 50;
-      radius = Math.floor(min / 3);
 
       canvas.width = min;
       canvas.height = min;
+      //min -= 50;
+      radius = Math.floor(min / 3);
       context = canvas.getContext("2d");
     };
     function getRainbowGradient(x1, y1, r1, x2, y2, r2) {
@@ -152,7 +151,7 @@
       context.stroke();
     };
 
-  /*   document.getElementById("btnDraw").onclick = function () {
+    /*   document.getElementById("btnDraw").onclick = function () {
       plot();
     };
  */
