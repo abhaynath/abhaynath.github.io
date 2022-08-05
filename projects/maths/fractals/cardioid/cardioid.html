@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardiod</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        /*    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center; */
+      }
+      #canvas {
+        /* background-color: orange; */
+        /* border: 1px solid gray; */
+      }
+      .controls .row {
+        display: flex;
+        /* justify-content: space-between; */
+      }
+      .controls input {
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <div class="row">
+        <label for="txtDivision">Division</label>
+        <input type="number" id="txtDivision" min="1" max="180" value="100" />
+      </div>
+      <div class="row">
+        <label for="txtNumber">Number</label>
+        <input type="number" id="txtNumber" min="1" max="100" value="2" />
+      </div>
+      <div class="row">
+        <label for="txtIterations">Iterations</label>
+        <input type="number" id="txtIterations" min="1" max="1000" value="100" />
+      </div>
+      <div class="row">
+        <button id="btnDraw">Draw</button>
+      </div>
+    </div>
+    <canvas id="canvas"></canvas>
+  </body>
+  <script>
+    let context = null;
+    let min = 0,
+      radius = 0;
+    const getWindowSize = () => {
+      let actualWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth || document.body.offsetWidth;
+      let actualHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight || document.body.offsetHeight;
+      return { actualWidth, actualHeight };
+    };
+    const setup = () => {
+      const obj = getWindowSize();
+      let canvas = document.getElementById("canvas");
+      let width = obj.actualWidth;
+      let height = obj.actualHeight;
+      min = Math.min(width, height);
+      min -= 50;
+      radius = Math.floor(min / 3);
+      console.log(width, height, min, radius);
+      canvas.width = min;
+      canvas.height = min;
+      context = canvas.getContext("2d");
+      // console.log(context);
+    };
+
+    const plot = () => {
+     // console.log(`plot`);
+      context.clearRect(0, 0, min, min);
+      context.lineWidth = 0.5;
+
+      const divisions = document.getElementById("txtDivision").value;
+      const myNum = document.getElementById("txtNumber").value;
+      const iterations = document.getElementById("txtIterations").value;
+    //  console.log(divisions, myNum, iterations);
+      const centerX = min / 2;
+      const centerY = min / 2;
+      //context.moveTo(0,0);
+      //context.lineTo(100,100);
+      /*  context.beginPath();
+  context.arc(centerX, centerY, radius, 0, 2 * Math.PI, true);
+  context.stroke(); */
+      // context.beginPath();
+      let points = [];
+      for (let c = 0; c < divisions; c++) {
+        let angle = c * (360 / divisions);
+
+        let x = centerX + radius * Math.cos((angle * Math.PI) / 180);
+        let y = centerY + radius * Math.sin((angle * Math.PI) / 180);
+
+        /*  let tx = centerX + (radius + 10) * Math.cos((angle * Math.PI) / 180);
+    let ty = centerY + (radius + 10) * Math.sin((angle * Math.PI) / 180); */
+        /*   console.log(angle, x, y);
+    context.moveTo(centerX, centerY);
+    context.lineTo(x, y); */
+        // context.fillText(c, tx, ty);
+        points.push({ x, y });
+      }
+      // context.stroke();
+     // console.log(points);
+
+      context.beginPath();
+      for (let c = 1; c <= iterations; c++) {
+        let index1 = c;
+        if (index1 >= points.length) {
+          index1 = index1 % divisions;
+        }
+        let index2 = c * myNum;
+        if (index2 >= points.length) {
+          index2 = index2 % divisions;
+        }
+        context.moveTo(points[index1].x, points[index1].y);
+        context.lineTo(points[index2].x, points[index2].y);
+      }
+      context.stroke();
+    };
+
+    document.getElementById("btnDraw").onclick = function () {
+      plot();
+    };
+
+    //console.log(getWindowSize());
+
+    setup();
+    plot();
+  </script>
+</html>
