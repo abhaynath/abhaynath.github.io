@@ -46,6 +46,10 @@
         <input type="number" id="txtIterations" min="1" max="1000" value="100" />
       </div>
       <div class="row">
+        <label for="color">Color</label>
+        <input type="color" id="color" value="#51008f"/>
+      </div>
+      <div class="row">
         <button id="btnDraw">Draw</button>
       </div>
     </div>
@@ -79,6 +83,7 @@
      // console.log(`plot`);
       context.clearRect(0, 0, min, min);
       context.lineWidth = 0.5;
+      context.strokeStyle = document.getElementById("color").value;
 
       const divisions = document.getElementById("txtDivision").value;
       const myNum = document.getElementById("txtNumber").value;
