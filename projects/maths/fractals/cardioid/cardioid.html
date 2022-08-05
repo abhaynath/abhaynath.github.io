@@ -35,7 +35,7 @@
     <div class="controls">
       <div class="row">
         <label for="txtDivision">Division</label>
-        <input type="number" id="txtDivision" min="1" max="180" value="100" />
+        <input type="number" id="txtDivision" min="1" max="180" value="250" />
       </div>
       <div class="row">
         <label for="txtNumber">Number</label>
@@ -43,15 +43,15 @@
       </div>
       <div class="row">
         <label for="txtIterations">Iterations</label>
-        <input type="number" id="txtIterations" min="1" max="1000" value="100" />
+        <input type="number" id="txtIterations" min="1" max="1000" value="500" />
       </div>
       <div class="row">
         <label for="color">Color</label>
-        <input type="color" id="color" value="#51008f"/>
+        <input type="color" id="color" value="#3c006a" />
       </div>
-      <div class="row">
+     <!--  <div class="row">
         <button id="btnDraw">Draw</button>
-      </div>
+      </div> -->
     </div>
     <canvas id="canvas"></canvas>
   </body>
@@ -64,6 +64,14 @@
       let actualHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight || document.body.offsetHeight;
       return { actualWidth, actualHeight };
     };
+    const getRandomColor = function () {
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    };
     const setup = () => {
       const obj = getWindowSize();
       let canvas = document.getElementById("canvas");
@@ -72,15 +80,23 @@
       min = Math.min(width, height);
       min -= 50;
       radius = Math.floor(min / 3);
-      console.log(width, height, min, radius);
+
       canvas.width = min;
       canvas.height = min;
       context = canvas.getContext("2d");
-      // console.log(context);
     };
-
+    function getRainbowGradient(x1, y1, r1, x2, y2, r2) {
+      var gradient = context.createRadialGradient(x1, y1, r1, x2, y2, r2);
+      gradient.addColorStop(0.0, "red");
+      gradient.addColorStop(1 / 6, "orange");
+      gradient.addColorStop(2 / 6, "yellow");
+      gradient.addColorStop(3 / 6, "green");
+      gradient.addColorStop(4 / 6, "aqua");
+      gradient.addColorStop(5 / 6, "blue");
+      gradient.addColorStop(1.0, "purple");
+      return gradient;
+    }
     const plot = () => {
-     // console.log(`plot`);
       context.clearRect(0, 0, min, min);
       context.lineWidth = 0.5;
       context.strokeStyle = document.getElementById("color").value;
@@ -88,11 +104,10 @@
       const divisions = document.getElementById("txtDivision").value;
       const myNum = document.getElementById("txtNumber").value;
       const iterations = document.getElementById("txtIterations").value;
-    //  console.log(divisions, myNum, iterations);
+
       const centerX = min / 2;
       const centerY = min / 2;
-      //context.moveTo(0,0);
-      //context.lineTo(100,100);
+
       /*  context.beginPath();
   context.arc(centerX, centerY, radius, 0, 2 * Math.PI, true);
   context.stroke(); */
@@ -104,18 +119,13 @@
         let x = centerX + radius * Math.cos((angle * Math.PI) / 180);
         let y = centerY + radius * Math.sin((angle * Math.PI) / 180);
 
-        /*  let tx = centerX + (radius + 10) * Math.cos((angle * Math.PI) / 180);
-    let ty = centerY + (radius + 10) * Math.sin((angle * Math.PI) / 180); */
-        /*   console.log(angle, x, y);
-    context.moveTo(centerX, centerY);
-    context.lineTo(x, y); */
-        // context.fillText(c, tx, ty);
         points.push({ x, y });
       }
-      // context.stroke();
-     // console.log(points);
 
       context.beginPath();
+      //  var gradient = getRainbowGradient(centerX, centerY, radius/2, centerX, centerY, radius);
+      // context.strokeStyle = gradient;
+      let map = {};
       for (let c = 1; c <= iterations; c++) {
         let index1 = c;
         if (index1 >= points.length) {
@@ -125,19 +135,26 @@
         if (index2 >= points.length) {
           index2 = index2 % divisions;
         }
-        context.moveTo(points[index1].x, points[index1].y);
-        context.lineTo(points[index2].x, points[index2].y);
+        let key = index1 + "," + index2;
+        if (map[key] == undefined) {
+          map[key] = [points[index1], points[index2]];
+          context.moveTo(map[key][0].x, map[key][0].y);
+          context.lineTo(map[key][1].x, map[key][1].y);
+        }
       }
       context.stroke();
     };
 
-    document.getElementById("btnDraw").onclick = function () {
+  /*   document.getElementById("btnDraw").onclick = function () {
       plot();
     };
-
-    //console.log(getWindowSize());
-
+ */
     setup();
     plot();
+
+    document.getElementById("txtDivision").oninput = plot;
+    document.getElementById("txtNumber").oninput = plot;
+    document.getElementById("txtIterations").oninput = plot;
+    document.getElementById("color").oninput = plot;
   </script>
 </html>
