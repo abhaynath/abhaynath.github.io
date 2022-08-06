@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cardiod</title>
+    <title>Cardioid</title>
     <style>
       html,
       body {
@@ -33,7 +33,8 @@
       }
       .controls input {
         width: 50px;
-        margin-left: 5px;
+        text-align: center;
+        /* margin-left: 5px; */
       }
     </style>
   </head>
@@ -44,16 +45,20 @@
         <input type="number" id="txtDivision" min="1" max="360" value="360" />
       </div>
       <div class="row">
-        <label for="txtNumber">Number</label>
+        <button id="btnPrev">Prev</button>
         <input type="number" id="txtNumber" min="1" max="360" value="2" />
+        <button id="btnNext">Next</button>
       </div>
       <div class="row">
         <label for="txtIterations">Iterations</label>
         <input type="number" id="txtIterations" min="1" max="1000" value="360" />
       </div>
-      <div class="row">
+    <!--   <div class="row">
         <label for="color">Color</label>
         <input type="color" id="color" value="#80FF00" />
+      </div> -->
+      <div class="row">
+        <button id="btnAnimate">Start</button>
       </div>
       <!--  <div class="row">
         <button id="btnDraw">Draw</button>
@@ -63,6 +68,7 @@
   </body>
   <script>
     let context = null;
+    let intervalId = "";
     let min = 0,
       radius = 0;
     const getWindowSize = () => {
@@ -70,6 +76,7 @@
       let actualHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight || document.body.offsetHeight;
       return { actualWidth, actualHeight };
     };
+    let isAnimating = false;
     const getRandomColor = function () {
       var letters = "0123456789ABCDEF";
       var color = "#";
@@ -105,7 +112,7 @@
     const plot = () => {
       context.clearRect(0, 0, min, min);
       context.lineWidth = 0.5;
-      context.strokeStyle = document.getElementById("color").value;
+      //context.strokeStyle = document.getElementById("color").value;
 
       const divisions = document.getElementById("txtDivision").value;
       const myNum = document.getElementById("txtNumber").value;
@@ -129,10 +136,10 @@
       }
 
       context.beginPath();
-      //  var gradient = getRainbowGradient(centerX, centerY, radius/2, centerX, centerY, radius);
-      // context.strokeStyle = gradient;
+      let gradient = getRainbowGradient(centerX, centerY, radius / 8, centerX, centerY, radius);
+      context.strokeStyle = gradient;
       let map = {};
-      for (let c = 1; c <= iterations; c++) {
+      for (let c = 1; c <= iterations; c = c + 1) {
         let index1 = c;
         if (index1 >= points.length) {
           index1 = index1 % divisions;
@@ -161,6 +168,33 @@
     document.getElementById("txtDivision").oninput = plot;
     document.getElementById("txtNumber").oninput = plot;
     document.getElementById("txtIterations").oninput = plot;
-    document.getElementById("color").oninput = plot;
+    // document.getElementById("color").oninput = plot;
+
+    document.getElementById("btnNext").onclick = function () {
+      document.getElementById("txtNumber").value = parseInt(document.getElementById("txtNumber").value) + 1;
+      plot();
+    };
+    document.getElementById("btnPrev").onclick = function () {
+      let num = parseInt(document.getElementById("txtNumber").value);
+      if (num <= 2) {
+        return;
+      }
+      document.getElementById("txtNumber").value = num - 1;
+      plot();
+    };
+
+    document.getElementById("btnAnimate").onclick = function () {
+      isAnimating = !isAnimating;
+      if (isAnimating) {
+        document.getElementById("btnAnimate").innerHTML = "Stop";
+        intervalId = setInterval(() => {
+          document.getElementById("txtNumber").value = parseInt(document.getElementById("txtNumber").value) + 1;
+          plot();
+        }, 1000);
+      } else {
+        document.getElementById("btnAnimate").innerHTML = "Start";
+        clearInterval(intervalId);
+      }
+    };
   </script>
 </html>
