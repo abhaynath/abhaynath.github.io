@@ -10,6 +10,7 @@
       body {
         margin: 0;
         padding: 0;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
       }
       body {
         background-color: black;
@@ -29,12 +30,30 @@
       }
       .controls .row {
         display: flex;
+        padding: 5px;
         /* justify-content: space-between; */
       }
       .controls input {
         width: 50px;
         text-align: center;
+        background-color: white;
+        color: black;
+        border: none;
+        padding: 2px;
+        margin-left: 3px;
+        margin-right: 3px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
         /* margin-left: 5px; */
+      }
+      .controls button {
+        border: none;
+        background-color: rgb(105, 105, 105);
+        color: white;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+      }
+      .controls button:hover {
+        background-color: rgb(137, 0, 190);
+        cursor: pointer;
       }
     </style>
   </head>
@@ -53,7 +72,7 @@
         <label for="txtIterations">Iterations</label>
         <input type="number" id="txtIterations" min="1" max="1000" value="360" />
       </div>
-    <!--   <div class="row">
+      <!--   <div class="row">
         <label for="color">Color</label>
         <input type="color" id="color" value="#80FF00" />
       </div> -->
@@ -95,7 +114,7 @@
       canvas.width = min;
       canvas.height = min;
       //min -= 50;
-       radius = Math.floor(min / 3);
+      radius = Math.floor(min / 3);
       //radius = 300;
       context = canvas.getContext("2d");
     };
