@@ -170,8 +170,9 @@ button {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
   height: 1rem;
 
-  border: 1px solid #747474;
-
+  border: 1px solid #bdbdbd;
+  outline: 1px solid #8d8d8d;
+  outline-offset: 0px;
   background: linear-gradient(0deg, #797979 0%, #000000 55%, #757575 55%, #dfdfdf 100%);
 }
 .btn-black:hover {
