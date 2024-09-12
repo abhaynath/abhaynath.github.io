@@ -14,7 +14,7 @@
     <div class="titlebar"></div>
     <div class="flex-wrap">
       <div class="button-group">
-        <button class="btn-blue">SUBMIT</button>
+        <button class="btn-blue" id="updateDetails">BUY</button>
         <button class="btn-blue">Cancel</button>
         <button class="btn-blue">Login</button>
       </div>
@@ -55,12 +55,22 @@
             <i class="fas fa-window-close"></i>
           </div>
         </div>
+        <div>
+          <select>
+            <option></option>
+            <option>Brine shrimp</option>
+            <option>Red panda</option>
+            <option>Spider monkey</option>
+          </select>
+        </div>
         <div class="button-group">
           <button class="btn-blue" value="cancel">CANCEL</button>
-          <button class="btn-blue" value="default">SUBMIT</button>
+          <button id="confirmBtn" class="btn-blue" value="default">SUBMIT</button>
         </div>
       </form>
     </dialog>
+
+    <output aria-live="polite"></output>
     <!-- <div>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam fugit tempore illum maiores eius magnam quas minus ipsum nihil nam, consequuntur quae,
       hic, perspiciatis dolorum ea explicabo sequi sit distinctio.
