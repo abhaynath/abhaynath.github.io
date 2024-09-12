@@ -43,3 +43,10 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.navbar {
+  width: 100%;
+  height: 41px;
+  background: rgb(10, 34, 66);
+  background: linear-gradient(0deg, #0a2242 0%, #0e3684 55.99%, #2d5095 56%, #cdd5e6 100%);
+}
