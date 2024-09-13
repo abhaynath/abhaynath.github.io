@@ -3,15 +3,11 @@
   padding: 0;
   box-sizing: content-box;
 }
-html,
-body {
-  margin: 0;
-  padding: 0;
-  /* height: 100%; */
+html {
   font-size: 20px;
+}
+body {
   font-family: "pt_sansregular";
-
-  /* overflow: hidden; */
   color: #0a2100;
 }
 :root {
@@ -79,6 +75,7 @@ button {
   gap: 0.2em;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 .btn-blue {
   font-size: 1rem;
