@@ -184,6 +184,23 @@ button {
   cursor: pointer;
   background: linear-gradient(0deg, #9e9e9e 0%, #000000 55%, #b1b1b1 55%, #ffffff 100%);
 }
+.btn-zune-orange {
+  font-size: 1rem;
+  color: #fff;
+
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  height: 1.5rem;
+  border: none;
+  border-top: 1px solid #ffdfc0;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  outline: none;
+
+  background: rgb(207, 93, 0);
+  background: linear-gradient(0deg, #cf5d00 0%, #b94500 50%, #e06d01 50%, #fdb57c 100%);
+}
 .popup {
   background-color: #e6ead9;
   border: 2px solid #abb2a2;
